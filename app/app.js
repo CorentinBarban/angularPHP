@@ -8,6 +8,7 @@ app.config(['$routeProvider',
       templateUrl: 'partials/products.html',
       controller: 'productsCtrl'
     })
+
     .otherwise({
       redirectTo: '/'
     });;

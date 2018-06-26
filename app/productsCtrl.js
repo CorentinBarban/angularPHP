@@ -8,7 +8,7 @@ app.controller('productsCtrl', function ($scope, $modal, $filter, Data) {
         Data.put("products/"+product.id,{status:product.status});
     };
     $scope.deleteProduct = function(product){
-        if(confirm("Are you sure to remove the product")){
+        if(confirm("Etes vous sur de vouloir supprimer le produit ?")){
             Data.delete("products/"+product.id).then(function(result){
                 $scope.products = _.without($scope.products, _.findWhere($scope.products, {id:product.id}));
             });
@@ -40,12 +40,12 @@ app.controller('productsCtrl', function ($scope, $modal, $filter, Data) {
     
  $scope.columns = [
                     {text:"ID",predicate:"id",sortable:true,dataType:"number"},
-                    {text:"Name",predicate:"name",sortable:true},
-                    {text:"Price",predicate:"price",sortable:true},
+                    {text:"Nom",predicate:"name",sortable:true},
+                    {text:"Prix",predicate:"price",sortable:true},
                     {text:"Stock",predicate:"stock",sortable:true},
                     {text:"Packing",predicate:"packing",reverse:true,sortable:true,dataType:"number"},
                     {text:"Description",predicate:"description",sortable:true},
-                    {text:"Status",predicate:"status",sortable:true},
+                    {text:"Statut",predicate:"status",sortable:true},
                     {text:"Action",predicate:"",sortable:false}
                 ];
 
